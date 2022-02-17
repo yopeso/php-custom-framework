@@ -1,7 +1,6 @@
 <?php
 
 use App\Controller\IndexController;
-use App\Service\PrefixService;
 use App\Service\StringProcess;
 use League\Route\Router;
 use League\Route\Strategy\ApplicationStrategy;
@@ -22,12 +21,13 @@ $router->map('GET', '/whatever', function (ServerRequestInterface $request): Res
     return new Response(200, [], 'This is xthe whatever page');
 });
 
-$router->map('GET', '/headers', function (ServerRequestInterface $request) use ($container)  {
+$router->map('GET', '/headers', function (ServerRequestInterface $request) use ($container) {
     /** @var StringProcess $service */
     $service = $container->get(StringProcess::class);
 
     return new Response(
-        200, [
+        200,
+        [
             'content-type' => 'application/json',
         ],
         json_encode([

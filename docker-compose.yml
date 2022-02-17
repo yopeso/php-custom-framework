@@ -17,3 +17,13 @@ services:
       context: .
     volumes:
       - .:/app
+
+
+  fix:
+    working_dir: /app
+    command: ["/bin/sh", "-c", "php vendor/bin/ecs --fix"]
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .:/app

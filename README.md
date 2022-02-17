@@ -17,3 +17,9 @@ This example puts together the following components:
 PHPDI was also used to exemplify autowiring concepts and boostrapping a lightweight API-like application.
 
 Roadrunner provides HTTP request handling, effectively replacing the FPM/NGINX combo for faster execution in a single container.
+
+## Compose Commands ##
+
+* `docker compose run -it cli` - enter a simple CLI with PHP (can also execute any command)
+* `docker compose run fix` - execute coding standards static check (with EasyCodingStandard)
+* `docker compose up -d` - start the web service (composer install / get RoadRunner / serve application)

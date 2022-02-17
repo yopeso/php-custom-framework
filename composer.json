@@ -14,5 +14,8 @@
         "psr-4": {
             "App\\": "src/"
         }
+    },
+    "require-dev": {
+        "symplify/easy-coding-standard": "^10.0"
     }
 }

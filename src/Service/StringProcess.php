@@ -8,7 +8,6 @@ class StringProcess
         private SuffixService $suffix,
         private PrefixService $prefix
     ) {
-
     }
 
     public function processString(string $text): string

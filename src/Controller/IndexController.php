@@ -13,9 +13,7 @@ class IndexController
     public function __construct(
         private StringProcess $service,
         private PrefixService $another
-    )
-    {
-
+    ) {
     }
     public function index(ServerRequestInterface $request): ResponseInterface
     {

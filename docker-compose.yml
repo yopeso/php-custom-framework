@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  app:
+    working_dir: /app
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .:/app
+    command: ["/bin/sh", "-c", "composer install -o && php vendor/bin/rr get-binary -n && chmod +x ./rr && ./rr serve"]
+    ports:
+      - 8080:8080
+  cli:
+    working_dir: /app
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .:/app
